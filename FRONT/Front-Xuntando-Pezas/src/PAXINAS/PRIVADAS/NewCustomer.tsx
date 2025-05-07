@@ -1,5 +1,7 @@
+import MenuLateral from "../../Componentes/MenuLateral";
+
 const NewCustomer = ()=>{
-    return <h1>Estou en NewCustomer</h1>
+    return <><MenuLateral /><h1>Estou en NewCustomer</h1></>
 }
 
 export default NewCustomer;

@@ -1,0 +1,24 @@
+.icono-menu-lateral{
+  width: 30px;
+  }
+  .menu-lateral{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #4C8DEB;
+    justify-content: space-evenly;
+  }
+
+.link-menu-lateral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /*margin: 10px;*/
+    text-align: center;
+}
+
+.icono-menu-lateral-exit{
+  width: 40px;
+  cursor: pointer;
+}

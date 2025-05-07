@@ -6,6 +6,8 @@ import ImaxenEngranaxe from "../../Componentes/PaxinaNewUser/ImaxenEngranaxe";
 import Avatar from "../../Componentes/PaxinaNewUser/Avatar";
 import BotonEnviar from "../../Componentes/PaxinaNewUser/BotonEnviar";
 import { Imaxes } from "../../assets/imaxes_newuser";
+import MenuLateral from "../../Componentes/MenuLateral";
+
 
 interface DatosFormulario {
   [key: string]: string;

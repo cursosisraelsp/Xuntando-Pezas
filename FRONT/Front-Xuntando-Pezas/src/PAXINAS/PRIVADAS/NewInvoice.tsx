@@ -1,5 +1,7 @@
+import MenuLateral from "../../Componentes/MenuLateral";
+
 const NewInvoice = ()=>{
-    return <h1>Estou en NewInvoice</h1>
+    return <><MenuLateral /> <h1>Estou en NewInvoice</h1></>
 }
 
 export default NewInvoice;
