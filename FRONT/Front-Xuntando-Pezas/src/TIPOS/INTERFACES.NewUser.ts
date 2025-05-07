@@ -1,9 +1,9 @@
 export interface DatosNewUser {
-    name: string;
-    surname: string;
+    nombre: string;
+    apellidos: string;
     email: string;
-    profession: string;
-    role: string;
+    profesion: string;
+    rol: string;
     image?: File | null; 
   }
   
