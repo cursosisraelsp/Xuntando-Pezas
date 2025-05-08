@@ -14,7 +14,7 @@
 }
 ul{
   display: flex;
-  width: 50%;
+  width: 75%;
   justify-content: space-around;
   margin-block-start: 0;
   padding-inline-start: 0;
@@ -24,11 +24,16 @@ ul{
 li{
   list-style: none;
   display: flex;
+  margin: 5%;
 }
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
+  color:black;
+ /*  background-color: white; */
+    
+   
 }
 a:hover {
   color: #535bf2;

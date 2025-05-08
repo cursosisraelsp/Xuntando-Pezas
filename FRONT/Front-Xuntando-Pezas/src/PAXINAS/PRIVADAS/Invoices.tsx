@@ -1,21 +1,24 @@
-import { Icono } from "../../Componentes/Icono";
 import MenuLateral from "../../Componentes/MenuLateral";
-import { Titulo } from "../../Componentes/Titulo";
 import Wrapper from "../../Componentes/Wrapper";
+import WrapperHeader from "../../Componentes/WrapperHeader";
+import { DatosWrapperHeader } from "../../TIPOS/INTERFACES.App";
 import "../../estilo/Invoices.App.css"
 const Invoices = ({icono}:{icono:string})=>{
     let estiloInvoices = "estilo-paxinas-app height-100vh";
     let estiloSeccionInvoices = "estilo-seccion-invoices";
-    let estiloIconoUser = "icono-User";
+    
+
+    // AQUÍ IRIA A LÓXICA DO COMPOÑENTE
+    let estilos : DatosWrapperHeader = {
+        seccion:"header-paxina",
+        titulo:"estilo-titulo",
+        icono:"icono-User" 
+    }
     return <>
     <Wrapper estilo={estiloInvoices}>
-    <MenuLateral url={2}/>
+        <MenuLateral url={2}/>
         <Wrapper estilo={estiloSeccionInvoices}>
-            <Wrapper estilo="header-paxina">
-                <Titulo titulo="Invoices" estilo="estilo-titulo"/>
-                <Icono imaxeUser={icono} estilo={estiloIconoUser}/>
-            </Wrapper>
-            
+            <WrapperHeader estilos={estilos} titulo="Invoices" icono={icono}/>
         </Wrapper>
     </Wrapper>
     
