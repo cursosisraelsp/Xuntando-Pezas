@@ -1,0 +1,56 @@
+/* @import url('@fontsource/mulish'); */
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F9FAFF;
+  padding: 20px;
+  /*border-bottom: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+  width: auto;
+  font-family: mulish;
+}
+
+
+
+.invoice-title {
+  margin: 0;
+  color: #405169;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacio entre el checkbox y los botones */
+}
+
+.recurring-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #405169;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.header-buttons button {
+  background-color: #007bff; /* Azul */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.header-buttons .cancel-button {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ccc;
+}

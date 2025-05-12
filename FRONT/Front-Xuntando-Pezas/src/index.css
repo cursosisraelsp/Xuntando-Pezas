@@ -12,9 +12,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.proba-centrado-NewProduct{
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+}
+.centrando-NewProducto-Salvador{
+  width: 100%;
+ align-items: center;
+  display: flex;
+  justify-content: center;
+}
 ul{
   display: flex;
-  width: 75%;
+
   justify-content: space-around;
   margin-block-start: 0;
   padding-inline-start: 0;

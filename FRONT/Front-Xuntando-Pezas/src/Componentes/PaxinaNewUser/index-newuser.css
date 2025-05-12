@@ -9,6 +9,7 @@
     box-sizing: border-box;
     background-color: #f4f6ff;
     overflow: hidden;
+    flex: 1;
   }
   
   /* FORMULARIO CAJA IZQUIERDA */

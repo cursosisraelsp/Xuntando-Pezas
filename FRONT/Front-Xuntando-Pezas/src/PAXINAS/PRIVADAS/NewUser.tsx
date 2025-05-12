@@ -7,11 +7,20 @@ import Avatar from "../../Componentes/PaxinaNewUser/Avatar";
 import BotonEnviar from "../../Componentes/PaxinaNewUser/BotonEnviar";
 import { Imaxes } from "../../assets/imaxes_newuser";
 import MenuLateral from "../../Componentes/MenuLateral";
+<<<<<<< HEAD
 import { DatosNewUser } from "../../TIPOS/INTERFACES.NewUser";
 
 
 interface DatosFormulario {
   [key: string]: string;
+=======
+import NewUserAdri from "./NewUserAdri";
+
+const NewUser = ()=>{
+    return <div className="estilo-paxinas-app">
+    <NewUserAdri />
+    <MenuLateral /></div>
+>>>>>>> upstream/logueo-con-bbdd-AUX
 }
 
 export default function NewUser() {

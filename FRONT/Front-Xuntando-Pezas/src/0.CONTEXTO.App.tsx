@@ -16,9 +16,10 @@ function Proveedorcontexto({ children }: { children: React.ReactNode }){
 
     const login = async (dato:any)=>{
         
-        await Comunicacion.metodoPost(`${urlServidorLocal}/${endpoints.acceso}`,dato);
+        let oToken = await Comunicacion.metodoPost(`${urlServidorLocal}/${endpoints.acceso}`,dato);
         
-        if(Comunicacion.isUser()){
+        if(Comunicacion.isUser(oToken)){
+            console.log("Entras?????")
             setIsUserLogueado(true)
             navigate('/app')
         }

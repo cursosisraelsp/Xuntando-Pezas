@@ -4,7 +4,7 @@ interface Props {
 
 const BotonEnviar = ({ onClick }: Props) => {
   return (
-    <button type="button" onClick={onClick}>
+    <button type="button" className="boton-enviar" onClick={onClick}>
       Enviar
     </button>
   );

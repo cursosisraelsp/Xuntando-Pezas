@@ -1,0 +1,169 @@
+/* vanessa */
+@import url("./AuxCustomers.css");
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  font-family: var(--familia-Arial);
+  background-color: var(--color-fondo-body);
+}
+
+.layoutCostumers {
+  display: flex;
+  min-height: 100vh;
+}
+
+.contenidoPrincipal_customers {
+  flex-grow: 1;
+  background: var(--color-fondo-body);
+  padding: 20px;
+  margin-left: 70px;
+}
+
+.menuSuperior_customers {
+  grid-template-columns: 1fr 1fr;
+  height: 65px;
+  width: 100%;
+  align-items: var(--alineacion-central);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: grid;
+}
+
+#grupoIzquierda-customers,
+#grupoDerecha-customers {
+  display: flex;
+  justify-self: left;
+}
+.imagenPerfilIzq {
+  width: 20%;
+}
+
+#grupoDerecha-customers {
+  justify-self: right;
+  margin-right: 20px;
+}
+
+.imagenNotificaciones {
+  width: 30px;
+  margin-right: 15px;
+}
+
+.imagenSearch {
+  margin-left: 30px;
+  width: 200px;
+}
+
+/* .barraLateral_customers {
+  width: 4.05%;
+  background: var(--fondo_barra_lateral);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: var(--alineacion-central);
+} */
+.barraLateral_customers {
+  position: fixed; /* <-- Esto es clave */
+  top: 0;
+  left: 0;
+  width: 4.05%;
+  background: var(--fondo_barra_lateral);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: var(--alineacion-central);
+  z-index: 1; /* Opcional para asegurarlo debajo del header */
+}
+
+.iconosBarraLateral {
+  width: 20px;
+  margin-top: 95px;
+  cursor: pointer;
+}
+
+.main_customers {
+  padding: 20px;
+  color: #405169;
+  font-family: var(--familia-Mulish);
+  margin-top: 15px;
+}
+
+.main-header_customers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+.botonAnhadir {
+  background-color: var(--color-fondo-azul);
+  border-radius: 5px;
+  border: none;
+  width: 115px;
+  height: 40px;
+  color: var(--color-barra);
+  font-family: var(--familia-Mulish);
+  font-size: 15px;
+}
+
+.divHamburguesa-customers {
+  background-color: var(--color-barra);
+  width: var(--ancho-cien-por-cien);
+  height: 50px;
+  box-shadow: 5px 5px 5px 5px rgb(220, 242, 250);
+  margin-top: 25px;
+}
+.estilo-seccion-custormers{
+  background-color: #F5F5F5;
+  width: 100%;
+  flex: 1;
+}
+.icono-hamburguesa {
+  float: right;
+}
+
+
+.tabla-customers {
+  /* float: right;
+  width: 90%; */
+  margin-top: 40px;
+}
+.tabla-customers th{
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: #d23f3f;
+}
+.body-tabla{
+  color: black;
+}
+
+.tabla-customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.fotoPerfilTabla {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/*CAMBIO DE COLOR SEGÚN ESTADO*/
+.status-busy {
+  color: red;
+}
+
+.status-on-vacation {
+  color: rgb(206, 165, 29);
+}
+
+.status-free {
+  color: blue;
+}
+
+.status-working {
+  color: black;
+}

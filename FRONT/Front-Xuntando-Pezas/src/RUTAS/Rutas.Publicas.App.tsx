@@ -5,7 +5,7 @@ export default function RutasPublicasApp(){
     return <>
         <Routes>
             <Route path="/" element={<AccesoApp />}/>
-            <Route path= "/new-user" element= {<NewUser/>} />
+            <Route path= "/newuser" element= {<NewUser/>} />
         </Routes>
     </>
 }

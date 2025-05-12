@@ -1,0 +1,185 @@
+
+/* ✅ Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ✅ Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ✅ Internet Explorer (en caso de soportarlo) */
+input[type=number] {
+  -ms-appearance: textfield;
+}
+
+
+.product-form {
+  position:relative;
+  width: 608px;
+  height: 644px;
+  background: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Esto posiciona la etiqueta */
+.product-form label[for="nome"] {
+  position: absolute;
+  top: 256px;
+  left: 47px;
+  width: 111px;
+  height: 25px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  align-items: flex-end; /* pega el texto al fondo */
+
+}
+
+.product-form label[for="codigo"] {
+  position: absolute;
+  top: 256px;
+  left: 193px;
+  width: 111px;
+  height: 25px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  align-items: flex-end; /* pega el texto al fondo */
+
+}
+
+.product-form label[for="stock"] {
+  position: absolute;
+  top: 341px;
+  left: 48px;
+  width: 111px;
+  height: 25px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  align-items: flex-end; /* pega el texto al fondo */
+
+}
+
+.product-form label[for="tipo"] {
+  position: absolute;
+  top: 411px;
+  left: 48px;
+  width: 111px;
+  height: 25px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  align-items: flex-end; /* pega el texto al fondo */
+
+}
+
+
+.product-form label[for="peso"] {
+  position: absolute;
+  top: 478px;
+  left: 48px;
+  width: 111px;
+  height: 25px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  align-items: flex-end; /* pega el texto al fondo */
+
+}
+
+
+.product-form label[for="precio"] {
+  position: absolute;
+  top: 554px;
+  left: 48px;
+  width: 111px;
+  height: 25px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  align-items: flex-end; /* pega el texto al fondo */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.product-form #nome,
+.product-form #codigo,
+.product-form #stock,
+.product-form #tipo,
+.product-form #peso,
+.product-form #precio {
+  width: 343px;
+  height: 33px;
+  position: absolute;
+  border: 1px solid rgba(76,141,235,0.1865);
+  border-radius: 3px;
+  background-color: white;
+}
+
+/* Esto posiciona el input */
+.product-form #nome{
+  top: 281px;
+  left: 48px;
+  width:97px ; 
+  height:33px ;
+}
+
+
+.product-form #codigo {
+  top: 281px;
+  left: 193px;
+  width:198px ; 
+  height:33px ;
+}
+
+.product-form #stock {
+  top: 365px;
+  left: 47px;
+}
+
+.product-form #tipo {
+  top: 438px;
+  left: 47px;
+}
+
+.product-form #peso {
+  top: 508px;
+  left: 47px;
+}
+
+.product-form #precio {
+  top: 583px;
+  left: 47px;
+}
+
+

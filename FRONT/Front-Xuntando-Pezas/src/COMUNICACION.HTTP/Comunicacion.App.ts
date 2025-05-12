@@ -1,4 +1,5 @@
 import {  TipoRespostaServidor } from "../TIPOS/TIPOS.Comunicacion.App";
+import { adaptoToken } from "../FUNCIONS/funcions";
 /**
  * @author Pepito Gutierrez
  * @class Comunicacion
@@ -35,31 +36,53 @@ export class Comunicacion{
         }else{
             
             let datoEnviados : RequestInit = {
-            method: 'POST',
-            headers:{
-                "Content-type":"application/json"
-            },
-            body: JSON.stringify(datos)
-        }
-        console.log("endpoint ",endpoint,datoEnviados)
-        let resposta = await fetch(endpoint,datoEnviados); //  Son os datos que enviamos co endpoint
-        this.datos = await resposta.json();         //  En resposta é que me está a enviar o Server
+                method: 'POST',
+                headers:{
+                    "Content-type":"application/json"
+                },
+                body: JSON.stringify(datos)
+            }
+            console.log("endpoint ",endpoint,datoEnviados)
+            let resposta = await fetch(endpoint,datoEnviados); //  Son os datos que enviamos co endpoint
+            
+            let token = await resposta.json();
+
+            console.log("token? ",token)
+            return token.token
+                   //  En resposta é que me está a enviar o Server
+            //console.log("await resposta.json()",await resposta.json() )
+            
         }
         
     }
-    static async metodoPaxinaGet(endpoint: string,datos:any){
-        let resposta = await fetch(endpoint,datos); //  Son os datos que enviamos co endpoint
-        this.paxina = await resposta.text();         //  En resposta é que me está a enviar o Server
+    
+
+    static async metodoPut(endpoint:string,datos:any){
+        //RequestInit necesita que Authorizatin sexa string
+        let datoEnviados : RequestInit = {
+                method: 'PUT',
+                headers:{
+                "Authorization": adaptoToken(),
+                "Content-Type":"application/json"
+                },
+                body: JSON.stringify(datos)
+            }
+           let datoString = adaptoToken()
+            console.log("datosEnviados ",datos,endpoint,datoString)
+            let resposta = await fetch(`http://localhost:3000${endpoint}`,datoEnviados); //  Son os datos que enviamos co endpoint
+            this.datos = await resposta.json();         //  En resposta é que me está a enviar o Server
+            console.log("this.datos ", this.datos)
     }
-    static isUser():Boolean{
+
+    static isUser(token:string):Boolean{
         let isUser = false;
-        let datoResposta : TipoRespostaServidor ={
+        /* let datoResposta : TipoRespostaServidor ={
             estado: this.datos.status,
             mensage: this.datos.statusText
-        }
-        
-        if(datoResposta.mensage != "non é o usuario correcto"){
-            localStorage.setItem("usuario",datoResposta.mensage);
+        } */
+        console.log("estou en isUser token",token)
+        if(token != "Usuario o contraseña incorrectos"){
+            localStorage.setItem("usuario",token);
             isUser = true;
         }
         return isUser
@@ -74,8 +97,6 @@ export class Comunicacion{
         return this.datos
     }
 
-    static get Paxina(){
-        return this.paxina
-    }
+    
 }
 

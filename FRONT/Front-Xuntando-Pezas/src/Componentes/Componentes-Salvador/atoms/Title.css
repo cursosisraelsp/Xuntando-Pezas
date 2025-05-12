@@ -1,0 +1,12 @@
+.title {
+  position: absolute;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 100%;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+  top:18px;
+  left:77px;
+}

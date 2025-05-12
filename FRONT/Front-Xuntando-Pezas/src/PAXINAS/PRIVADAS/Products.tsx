@@ -15,10 +15,11 @@ let estilos : DatosWrapperHeader = {
 }
     return <>
     <Wrapper estilo={estiloProducts}>
-    <MenuLateral url={4}/>
+    
         <Wrapper estilo={estiloSeccionCustomers}>
             <WrapperHeader estilos={estilos} titulo="Products" icono={icono}/>
         </Wrapper>
+        <MenuLateral url={4}/>
     </Wrapper>
     
     </>

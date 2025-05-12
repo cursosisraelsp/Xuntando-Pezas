@@ -21,6 +21,12 @@ import iconoFacturas from "./ImaxesMenus/facturas.png";
 import iconoProductos from "./ImaxesMenus/productos.png";
 import iconoUsuarios from "./ImaxesMenus/usuarios.png";
 import iconoSair from "./ImaxesMenus/exit.png";
+
+/// IMAXES CUSTOMERS
+import editar from "./customer-images/editar.svg";
+import papelera from "./customer-images/papelera-48.png";
+import gardar from "./customer-images/guardar-48.png";
+
 export const Imaxes = {
     mensaxeSecreto,
     usuario,
@@ -42,5 +48,8 @@ export const Imaxes = {
     iconoFacturas,
     iconoProductos,
     iconoUsuarios,
-    iconoSair
+    iconoSair,
+    editar,
+    papelera,
+    gardar
 }

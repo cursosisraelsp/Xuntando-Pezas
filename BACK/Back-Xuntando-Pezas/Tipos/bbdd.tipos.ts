@@ -8,6 +8,8 @@ export type datoUser = {
     PWD_TRABALLADOR: string
 }
 
+export type datoUserEisUser = datoUser | boolean | undefined  
+export type promesaEDatos = Promise<datoUserEisUser>
 type instruccions = {
     sqlLecturaUser: string
 }

@@ -1,7 +1,10 @@
 import MenuLateral from "../../Componentes/MenuLateral";
+import NewCustomerAngel from "./NewCustomerAngel";
 
 const NewCustomer = ()=>{
-    return <><MenuLateral /><h1>Estou en NewCustomer</h1></>
+    return <div className="estilo-paxinas-app">
+    <NewCustomerAngel />
+    <MenuLateral /></div>
 }
 
 export default NewCustomer;

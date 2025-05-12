@@ -42,6 +42,9 @@
   
   flex: 1; 
 }
+.flex-1{
+  flex:1
+}
 .estilo-paxinas-app{
   
   display: flex;
