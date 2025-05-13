@@ -4,25 +4,28 @@ import { storage } from './configuracion.multer';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { accesoUser } from './CONTROLADORES/USERS/accesoUser';
-import { getUsers } from './CONTROLADORES/USERS/getUsers';
-import fs from 'fs';
-
+import { getCustomers } from './CONTROLADORES/CUSTOMERS/getCustomers';
 
 dotenv.config();
-
+const portNumber = 3000;
 const app = express();
-const portNumber = process.env.PORT || 3000;
 
+// Configuración de Multer
 const upload = multer({ storage });
 
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-app.post("/acceso", accesoUser);
-app.get("/users", getUsers);
+// Rutas
+app.get('/', (req, res) => {
+  res.send('¡Bienvenido al backend de Xuntando Pezas!');
+});
 
-app.listen(portNumber, () => {
-  // fs module is already imported at the top level
-  fs.writeFileSync('./configuracion.db.ts', "declare module '../../configuracion/configuracion.db'");
-  
+app.post('/acceso', accesoUser);
+app.get('/customers', getCustomers);
+
+// Inicio del servidor
+app.listen(portNumber, 'localhost', () => {
+  console.log(`Listening on localhost:${portNumber}`);
 });
