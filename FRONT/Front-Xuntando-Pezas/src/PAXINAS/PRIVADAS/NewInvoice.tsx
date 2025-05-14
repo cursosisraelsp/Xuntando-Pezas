@@ -29,39 +29,72 @@ interface InvoiceItem {
   }
 function App() {
   const [isRecurringInvoice, setIsRecurringInvoice] = useState(false);
-  const [customers] = useState<Customer[]>([
-    {
-      id: '1',
-      name: 'Cliente A',
-      companyName: 'Empresa A',
-      companyVat: 'ES12345678',
-      companyAddress: 'Calle Falsa 123',
-      companyCity: 'Madrid',
-      shippingName: 'Contacto A',
-      shippingVat: 'ES87654321',
-      shippingAddress: 'Avenida Inventada 456',
-      shippingCity: 'Barcelona',
-    },
-    {
-      id: '2',
-      name: 'Cliente B',
-      companyName: 'Negocio B',
-      companyVat: 'FR98765432',
-      companyAddress: 'Rue de Exemple 789',
-      companyCity: 'París',
-      shippingName: 'Responsable B',
-      shippingVat: 'FR23456789',
-      shippingAddress: 'Boulevard Imaginaire 101',
-      shippingCity: 'Lyon',
-    },
+  const [customers, setCustomers] = useState<Customer[]>([]); // Estado para los clientes
+  const [selectedCustomerId, setSelectedCustomerId] = useState<string>('');
+  const [invoiceNumber, setInvoiceNumber] = useState<string>('INV-2024-001');
+  const [invoiceDate, setInvoiceDate] = useState<string>('');
+  const [paymentTerm, setPaymentTerm] = useState<string>('');
+  const [dueDate, setDueDate] = useState<string>('');
+  const [invoiceItems, setInvoiceItems] = useState<InvoiceItem[]>([
+    { id: 1, serviceProduct: 'Consultoría (Horas)', quantity: 2, price: 50, unit: 'hora(s)', vatRate: 21, total: 0 },
   ]);
+
+  // Efecto para obtener los clientes desde el backend
+  useEffect(() => {
+    const fetchCustomers = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/customers'); // Ajustar la URL si es diferente
+        const data: Customer[] = await response.json();
+        setCustomers(data);
+      } catch (error) {
+        console.error('Error al obtener los clientes:', error);
+      }
+    };
+    fetchCustomers();
+  }, []);
 
   const handleCancel = () => {
     alert('Se ha cancelado la creación de la factura.');
+    setIsRecurringInvoice(false);
+    setSelectedCustomerId('');
+    setInvoiceNumber('INV-2024-001');
+    setInvoiceDate('');
+    setPaymentTerm('');
+    setDueDate('');
+    setInvoiceItems([{ id: 1, serviceProduct: 'Consultoría (Horas)', quantity: 2, price: 50, unit: 'hora(s)', vatRate: 21, total: 0 }]);
   };
 
-  const handleDone = () => {
+  const handleDone = async () => {
     alert('Se han guardado los datos de la factura.');
+    try {
+      const invoiceData = {
+        isRecurringInvoice,
+        customerId: selectedCustomerId,
+        invoiceNumber,
+        invoiceDate,
+        paymentTerm,
+        dueDate,
+        invoiceItems,
+      };
+
+      const response = await fetch('http://localhost:3001/invoices', { //Ajustar la dirección
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(invoiceData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error al guardar la factura: ${response.status}`);
+      }
+      const result = await response.json();
+      console.log('Respuesta del servidor:', result);
+      // Aquí podrías redirigir a otra página o mostrar un mensaje de éxito
+    } catch (error) {
+      console.error('Error al enviar los datos de la factura:', error);
+      // Aquí podrías mostrar un mensaje de error al usuario
+    }
   };
 
   const handleRecurringChange = (checked: boolean) => {
@@ -69,53 +102,38 @@ function App() {
     console.log('Make recurring:', checked);
   };
 
-  // Estado para almacenar los items de la factura.  Lo inicializamos aquí
-  const [invoiceItems, setInvoiceItems] = useState<InvoiceItem[]>([
-    { id: 1, serviceProduct: 'Consultoría (Horas)', quantity: 2, price: 50, unit: 'hora(s)', vatRate: 21, total: 0 },
-  ]);
-
-    // Estado para almacenar la información de la factura seleccionada
-  const [selectedCustomerId, setSelectedCustomerId] = useState<string>('');
-  const [invoiceNumber, setInvoiceNumber] = useState<string>('INV-2024-001'); // Ejemplo de número de factura
-  const [invoiceDate, setInvoiceDate] = useState<string>('');
-  const [paymentTerm, setPaymentTerm] = useState<string>('');
-  const [dueDate, setDueDate] = useState<string>('');
-
-  // Función para manejar los cambios en los items de la factura.  Se pasa al componente InvoiceItemsTable
   const handleInvoiceItemsChange = (newItems: InvoiceItem[]) => {
     setInvoiceItems(newItems);
   };
 
-    const handleCustomerSelect = (customerId: string) => {
-        setSelectedCustomerId(customerId);
-    };
+  const handleCustomerSelect = (customerId: string) => {
+    setSelectedCustomerId(customerId);
+  };
 
-    const handleInvoiceNumberChange = (number: string) => {
-        setInvoiceNumber(number);
-    };
+  const handleInvoiceNumberChange = (number: string) => {
+    setInvoiceNumber(number);
+  };
 
-    const handleInvoiceDateChange = (date: string) => {
-        setInvoiceDate(date);
-    };
+  const handleInvoiceDateChange = (date: string) => {
+    setInvoiceDate(date);
+  };
 
-    const handlePaymentTermChange = (term: string) => {
-        setPaymentTerm(term);
-    };
+  const handlePaymentTermChange = (term: string) => {
+    setPaymentTerm(term);
+  };
 
-    const handleDueDateChange = (date: string) => {
-        setDueDate(date);
-    };
+  const handleDueDateChange = (date: string) => {
+    setDueDate(date);
+  };
 
   return (
     <div className="App">
-    
       <InvoiceHeader
         onCancel={handleCancel}
         onDone={handleDone}
         isRecurring={isRecurringInvoice}
         onRecurringChange={handleRecurringChange}
       />
-      
       <InvoiceDetails
         customers={customers}
         selectedCustomer={selectedCustomerId}
@@ -129,18 +147,15 @@ function App() {
         dueDate={dueDate}
         onDueDateChange={handleDueDateChange}
       />
-      
       <InvoiceItemsTable
         items={invoiceItems}
         onItemsChange={handleInvoiceItemsChange}
       />
-      
       <FileUpload
         onFileUploaded={(file) => {
           console.log('Archivo subido en App:', file);
         }}
       />
-      
     </div>
   );
 }
