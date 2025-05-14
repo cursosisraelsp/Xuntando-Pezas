@@ -1,0 +1,116 @@
+/* @import url('@fontsource/mulish'); */
+
+.invoice-details-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  /*border-radius: 5px;*/
+  color: #405169 ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  width: auto;
+  font-family: mulish;
+}
+
+.left-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.customer-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.customer-selector label {
+  font-weight: bold;
+  flex: 0 0 auto; /* Evita que la etiqueta se estire */
+}
+
+.customer-selector select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.company-shipping-container {
+  display: flex;
+  gap: 20px;
+}
+
+.company-details,
+.shipping-address {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center; /* Alinea verticalmente el título y el icono */
+  justify-content: space-between; /* Espacia el título y el icono */
+}
+
+.edit-icon {
+  cursor: pointer;
+  color: #6b7280;
+}
+
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.right-column label {
+  font-weight: bold;
+  width: 120px;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+
+.right-column input[type="text"],
+  
+
+.right-column select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.right-column .invoice-number,
+.right-column .date,
+.right-column .payment-term,
+.right-column .due-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.due-date-input-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.calendar-icon {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  color: #6b7280;
+}

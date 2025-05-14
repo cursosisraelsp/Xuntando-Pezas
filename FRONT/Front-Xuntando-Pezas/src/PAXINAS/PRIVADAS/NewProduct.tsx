@@ -1,7 +1,14 @@
+import NewProductTemplate from "../../Componentes/Componentes-Salvador/templates/NewProductTemplate";
 import MenuLateral from "../../Componentes/MenuLateral";
 
+
 const NewProduct = ()=>{
-    return <><MenuLateral /><h1>Estou en NewProduct</h1></>
+    return <div>
+                <div >
+                    <NewProductTemplate />
+                </div> 
+                {/* <MenuLateral /> */}
+    </div>
 }
 
 export default NewProduct;

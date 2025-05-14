@@ -9,6 +9,10 @@
     box-sizing: border-box;
     background-color: #f4f6ff;
     overflow: hidden;
+<<<<<<< HEAD
+=======
+    flex: 1;
+>>>>>>> origin/logueo-con-bbdd-AUX
   }
   
   /* FORMULARIO CAJA IZQUIERDA */

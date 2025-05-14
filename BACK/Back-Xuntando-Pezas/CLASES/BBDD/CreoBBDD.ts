@@ -29,7 +29,7 @@ export class CreoBBDD{
     }
 
     private async creoBBDD(sentenciaCreacionTablas:DatoBBDD):Promise<void>{
-        (await this.conexionBBDD()).exec(`${sentenciaCreacionTablas}`).catch(error => console.error("O erro é: ",error))
+        (await this.conexionBBDD()).exec(sentenciaCreacionTablas.bbdd).catch(error => console.error("O erro é: ",error))
         //(await this.openDb()).exec(`${sentenciaCreacionTablas}`)
     }
 }

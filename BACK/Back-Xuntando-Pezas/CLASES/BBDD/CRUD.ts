@@ -1,5 +1,5 @@
 import { Database } from "sqlite";
-import { datoUser } from "../../Tipos/bbdd.tipos";
+import { datoUser, datoUserEisUser, promesaEDatos} from "../../Tipos/bbdd.tipos";
 
 export class CRUD{
     
@@ -20,9 +20,21 @@ export class CRUD{
 
     async lerUnhaFila(sentenciaSQL:string,valorCampo:string):Promise<datoUser>{
         try{
-            //let dato = (await this.conexion).get(`${sentenciaSQL}`)
+           
             let dato = (await this.conexion).get(`${sentenciaSQL}`,`${valorCampo}`)
             console.log("dato en funcion ler ",await dato)
+            return await dato
+        }catch(e){
+            throw Error("Entrada no valida")
+        }
+        
+    }
+    async lerUnhaFila2Campos(sentenciaSQL:string,valorCampo:[string,string]):Promise<datoUser>{
+        try{
+           
+            let dato = (await this.conexion).get(`${sentenciaSQL}`,valorCampo)
+            
+            
             return await dato
         }catch(e){
             throw e

@@ -3,8 +3,10 @@ import multer from 'multer';
 import { storage } from './configuracion.multer';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { accesoUser } from './CONTROLADORES/USERS/accesoUser';
-import { crearNewUser } from './CONTROLADORES/crearNewUser';
+import { deleteCustomers, getCustomers, putCustomers } from './CONTROLADORES/CUSTOMERS';
+import { accesoUser, isUser } from './CONTROLADORES/USERS';
+import { endpoints } from './datos/endpoints';
+
 dotenv.config();
 const portNumber = 3000;
 const app = express();
@@ -17,6 +19,16 @@ app.use(express.json())
 app.post("/acceso",accesoUser)
 app.post("/usuarios", upload.single("file"), crearNewUser)
 
+app.post(endpoints.acceso,accesoUser);
+app.get(endpoints.customers, getCustomers);
+
+// ENDPOINTS DE MODIFICACION - PUT
+
+app.put(endpoints.customersEditar,isUser,putCustomers)
+
+// ENDPOINTS DE BORRADO - DELETE
+
+app.delete(endpoints.customersBorrar,isUser,deleteCustomers)
 
 app.listen(portNumber, 'localhost', () => {
     console.log('Listening on localhost:' + portNumber);

@@ -1,0 +1,102 @@
+.invoice-items-table-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Para que el contenedor ocupe el ancho completo */
+    /*margin-top: 10px;*/
+    background-color: #FFFFFF;
+  }
+  
+  table {
+    width: 96%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    margin-left: 2%;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  /* Bordes redondeados para la primera fila (cabecera) */
+  thead tr:first-child th:first-child {
+    border-top-left-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  thead tr:first-child th:last-child {
+    border-top-right-radius: 5px;
+  }
+  
+  /* Bordes redondeados para la última fila del cuerpo de la tabla */
+  tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+  }
+  
+  tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  .add-item-button { /* Estilos para el botón de añadir item */
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 10px; /* Espacio entre el botón y los totales */
+    align-self: flex-start; /* Alinea el botón a la izquierda */
+    margin-left: 2%;
+
+  }
+  
+  .add-item-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .totals-container {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: flex-end; /* Alinea los elementos a la derecha */
+    width: calc(100% / 7 * 2);
+    margin-left: auto;
+    padding: 8px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    margin-right: 2%;
+  }
+  
+  .sub-total {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5px; /* Espacio entre Sub Total y Total */
+  }
+  
+  .total {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .sub-total span:first-child, .total span:first-child {
+    font-weight: bold;
+  } 

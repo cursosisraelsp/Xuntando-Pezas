@@ -19,11 +19,12 @@ const Users = ({icono}:{icono:string})=>{
 
     return <>
     <Wrapper estilo={estiloUsers}>
-        <MenuLateral url={3}/>
+        
         <Wrapper estilo={estiloSeccionUsers}>
         
             <WrapperHeader estilos={estilos} titulo="Users" icono={icono}/>
         </Wrapper>
+        <MenuLateral url={3}/>
     </Wrapper>
     </>
 }

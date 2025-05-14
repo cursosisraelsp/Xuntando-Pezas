@@ -7,11 +7,13 @@ import Avatar from "../../Componentes/PaxinaNewUser/Avatar";
 import BotonEnviar from "../../Componentes/PaxinaNewUser/BotonEnviar";
 import { Imaxes } from "../../assets/imaxes_newuser";
 import MenuLateral from "../../Componentes/MenuLateral";
-import { DatosNewUser } from "../../TIPOS/INTERFACES.NewUser";
+import NewUserAdri from "./NewUserAdri";
+import { NewUser } from "../../RUTAS/PAXINAS.PRIVADAS";
 
-
-interface DatosFormulario {
-  [key: string]: string;
+const NewUser = ()=>{
+    return <div className="estilo-paxinas-app">
+    <NewUserAdri />
+    <MenuLateral /></div>
 }
 
 export default function NewUser() {

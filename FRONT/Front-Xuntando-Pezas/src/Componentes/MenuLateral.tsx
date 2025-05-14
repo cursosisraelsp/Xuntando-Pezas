@@ -49,7 +49,7 @@ export default function MenuLateral({url}:{url:number}){
                         <span style={{color:"white", width: "75px", fontSize:"15px",fontWeight: "100"}}>Usuarios</span>
                     </Link>
                 }
-               </span>
+            </span>
                 
     </nav>
     

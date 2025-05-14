@@ -16,10 +16,11 @@ const Invoices = ({icono}:{icono:string})=>{
     }
     return <>
     <Wrapper estilo={estiloInvoices}>
-        <MenuLateral url={2}/>
+        
         <Wrapper estilo={estiloSeccionInvoices}>
             <WrapperHeader estilos={estilos} titulo="Invoices" icono={icono}/>
         </Wrapper>
+        <MenuLateral url={2}/>
     </Wrapper>
     
     </>

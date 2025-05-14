@@ -20,11 +20,11 @@ const Home = ({icono}:{icono:string}) => {
   return <>
   <Wrapper estilo={estiloHome}>
     
-      <MenuLateral url={0} />
+      
     <LinksRutasPrivadasApp >
       <WrapperHeader estilos={estilos} titulo="Home" icono={icono}/>
     </LinksRutasPrivadasApp>
-    
+    <MenuLateral url={0} />
   </Wrapper>
   
   </>;

@@ -1,0 +1,54 @@
+.image-uploader {
+  position: absolute;
+
+  top: 35px;
+  left: 45px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.preview-container {
+  width: 200px;
+  height: 200px;
+  background-color: #f0f0f0; /* color de fondo para ver el espacio */
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;      /* 👈 recorta el contenido */
+  border-radius: 12px;    /* 👈 define el redondeado en el contenedor */
+  border: 1px solid #ccc;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.preview.hidden {
+  display: none;  /* oculta la imagen, pero no el contenedor */
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;  /* 👈 esto los apila verticalmente */
+  gap: 10px;               /* opcional: espacio entre ellos */
+  align-items: flex-end;  /* opcional: alinear a la izquierda */
+  margin-top: 60px; /* 👈 aquí regulas la separación */
+}
+
+
+.primary.uploader-button,
+.danger.uploader-button {
+  width: 150px;
+  height: 50px;
+  font-size: 14px;
+  padding: 10px 20px;
+  position: static; /* asegura que no se posicione absoluto */
+  
+}
+
+
