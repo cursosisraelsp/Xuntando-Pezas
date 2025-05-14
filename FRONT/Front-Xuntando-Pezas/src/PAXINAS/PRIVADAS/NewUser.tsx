@@ -7,14 +7,12 @@ import Avatar from "../../Componentes/PaxinaNewUser/Avatar";
 import BotonEnviar from "../../Componentes/PaxinaNewUser/BotonEnviar";
 import { Imaxes } from "../../assets/imaxes_newuser";
 import MenuLateral from "../../Componentes/MenuLateral";
-import NewUserAdri from "./NewUserAdri";
-import { NewUser } from "../../RUTAS/PAXINAS.PRIVADAS";
 
-const NewUser = ()=>{
+/*const NewUser = ()=>{
     return <div className="estilo-paxinas-app">
     <NewUserAdri />
     <MenuLateral /></div>
-}
+}*/
 
 export default function NewUser() {
   const [imagenPerfil, setImagenPerfil] = useState<string>(Imaxes.avatar);
