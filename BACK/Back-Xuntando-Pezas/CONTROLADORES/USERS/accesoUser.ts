@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import Jwt from "jsonwebtoken";
 import { execucionTodoBBDD } from "../../instruccions.base.sqlite";
 import { listaInstruccions } from "../../datos/lista.instruccions.bbdd.israel";
-
 import { datoUser } from "../../Tipos/bbdd.tipos";
 import { isUser } from "../../helpers";
 

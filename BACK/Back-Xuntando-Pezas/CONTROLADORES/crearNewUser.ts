@@ -28,20 +28,21 @@ export const crearNewUser = async (req: Request, res: Response) => {
         PROFESION_CLIENTE,
         ROL_CLIENTE,
         EMPRESA_CLIENTE
-        
-      )
-      VALUES (
-        '${nombre}',
-        '${apellidos}',
-        '${email}',
-        '${profesion}',
-        '${rol}',
-        'Particular'
-       
-      );
-    `;
+        IMG_CLIENTE
+   )
+  VALUES (?, ?, ?, ?, ?, ?, ?)
+`; 
+ const valores = [
+  nombre,
+  apellidos,
+  email,
+  profesion,
+  rol,
+  "Particular",
+  rutaFinalImagen || null
+];
 
-    await crud.insertar(sql);
+    await crud.insertar(sql,);
 
     res.status(201).json({
       mensaje: "Cliente creado correctamente",
