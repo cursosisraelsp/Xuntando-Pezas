@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Formulario from "../../Componentes/PaxinaNewUser/Formulario";
-import ImaxenEngranaxe from "../../Componentes/PaxinaNewUser/ImaxenEngranaxe";
 import Avatar from "../../Componentes/PaxinaNewUser/Avatar";
 import BotonEnviar from "../../Componentes/PaxinaNewUser/BotonEnviar";
 import { DatosNewUser } from "../../TIPOS/INTERFACES.NewUser";

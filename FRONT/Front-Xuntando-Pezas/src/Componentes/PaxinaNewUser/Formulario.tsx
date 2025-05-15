@@ -28,6 +28,7 @@ const Formulario = ({ onSubmit }: Props) => {
 
   return (
     <div className="formulario-perfil">
+
       <input type="text" name="nombre" placeholder="Nombre" value={formulario.nombre} onChange={handleChange} />
       <input type="text" name="apellidos" placeholder="Apellidos" value={formulario.apellidos} onChange={handleChange} />
       <input type="email" name="email" placeholder="Email" value={formulario.email} onChange={handleChange} />

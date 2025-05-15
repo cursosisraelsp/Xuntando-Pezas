@@ -7,6 +7,7 @@ import Avatar from "../../Componentes/PaxinaNewUser/Avatar";
 import BotonEnviar from "../../Componentes/PaxinaNewUser/BotonEnviar";
 import { Imaxes } from "../../assets/imaxes_newuser";
 import MenuLateral from "../../Componentes/MenuLateral";
+import { DatosNewUser } from "../../TIPOS/INTERFACES.NewUser";
 
 /*const NewUser = ()=>{
     return <div className="estilo-paxinas-app">
@@ -16,7 +17,7 @@ import MenuLateral from "../../Componentes/MenuLateral";
 
 export default function NewUser() {
   const [imagenPerfil, setImagenPerfil] = useState<string>(Imaxes.avatar);
-  const [datosFormulario, setDatosFormulario] = useState<DatosFormulario>({});
+  const [datosFormulario, setDatosFormulario] = useState<DatosNewUser>({});
 
   const handleSubmit = async () => {
     const datos = { ...datosFormulario, imagen: imagenPerfil };

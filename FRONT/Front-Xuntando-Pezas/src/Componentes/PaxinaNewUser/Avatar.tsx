@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Imaxes } from "../../assets/imaxes_newuser";
 
 interface AvatarProps {
-  imagen: string;
+  imagen: string | File | null;
   manejarCambioImagen: (e: React.ChangeEvent<HTMLInputElement>) => void;
   eliminarImagen: () => void;
 }
@@ -13,7 +13,9 @@ const Avatar = ({ imagen, manejarCambioImagen, eliminarImagen }: AvatarProps) =>
   return (
     <div className="avatar-contenedor">
       <img
-        src={imagen || Imaxes.avatar}
+        src={imagen instanceof File ? URL.createObjectURL(imagen):
+          imagen || Imaxes.avatar
+        }
         alt="Avatar"
         className="avatar-imagen"
       />
@@ -30,6 +32,7 @@ const Avatar = ({ imagen, manejarCambioImagen, eliminarImagen }: AvatarProps) =>
         <input
           type="file"
           accept="image/*"
+          name= "imagen"
           onChange={manejarCambioImagen}
           ref={inputRef}
           style={{ display: "none" }}

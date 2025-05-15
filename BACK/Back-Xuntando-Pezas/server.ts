@@ -21,7 +21,7 @@ app.use(express.json())
 
 app.post("/acceso",accesoUser)
 
-app.post("/usuarios", upload.single("file"), crearNewUser)
+app.post("/usuarios", upload.single("imagen"), crearNewUser)
 app.use('/imagenes', express.static(path.join(__dirname, 'public/imagenes')));
 
 
