@@ -1,0 +1,4 @@
+- Creé componentes nuevos para Users y otros reutilizables como los de icono,boton o menu lateral.
+- Fui adaptando la carpeta de componentes para que aunque es simulación se acerque a una conexión API real.
+- Hice una integracion "Users.tsx","UsersApp.tsx" y "UsersTabla.tsx" para ir hacia una renderizacion de la tabla usuarios
+(Con ayuda pero intentando avanzar😉)
