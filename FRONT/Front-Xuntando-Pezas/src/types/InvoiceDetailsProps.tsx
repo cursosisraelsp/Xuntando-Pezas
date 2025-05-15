@@ -2,8 +2,8 @@ import { Customer } from './Customer'; // Asegúrate de que la ruta a Customer s
 
 export interface InvoiceDetailsProps {
   customers: Customer[];
-  selectedCustomer: string;
-  onCustomerSelect: (customerId: string) => void;
+  selectedCustomer: number;
+  onCustomerSelect: (customerId: number) => void;
   invoiceNumber: string;
   onInvoiceNumberChange: (number: string) => void;
   invoiceDate: string;

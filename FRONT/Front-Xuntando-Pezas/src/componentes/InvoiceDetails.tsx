@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Edit } from "lucide-react";
+import { Edit } from "lucide-react";
 import '../componentes/InvoiceDetails.css';
 
 interface InvoiceDetailsProps {
   customers: {
-    id: string;
+    id: number;
     name: string;
-    companyName: string;
-    companyVat: string;
-    companyAddress: string;
-    companyCity: string;
-    shippingName: string;
-    shippingVat: string;
-    shippingAddress: string;
-    shippingCity: string
+    company_name: string;
+    company_vat: string;
+    company_address: string;
+    company_city: string;
+    shipping_name: string;
+    shipping_vat: string;
+    shipping_address: string;
+    shipping_city: string
   }[];
   selectedCustomer: string;
   invoiceNumber: string;
@@ -44,7 +44,7 @@ const InvoiceDetails: React.FC<InvoiceDetailsProps> = (props) => {
   });
 
   const [localDueDate, setLocalDueDate] = useState('');
-  const [isEditingDueDate, setIsEditingDueDate] = useState(false);
+  //const [isEditingDueDate, setIsEditingDueDate] = useState(false);
   const [localSelectedCustomer, setLocalSelectedCustomer] = useState('');
   const [localInvoiceNumber, setLocalInvoiceNumber] = useState('');
   const [localInvoiceDate, setLocalInvoiceDate] = useState('');
@@ -77,32 +77,35 @@ const InvoiceDetails: React.FC<InvoiceDetailsProps> = (props) => {
         const calculatedDueDate = new Date(today.setDate(today.getDate() + days));
         const formattedDate = `${calculatedDueDate.getDate()} / ${calculatedDueDate.getMonth() + 1} / ${calculatedDueDate.getFullYear()}`;
         setLocalDueDate(formattedDate);
+        props.onDueDateChange(formattedDate);
       }
     } else if (localPaymentTerm === 'dueOnReceipt') {
       const today = new Date();
       const formattedDate = `${today.getDate()} / ${today.getMonth() + 1} / ${today.getFullYear()}`;
       setLocalDueDate(formattedDate);
+      props.onDueDateChange(formattedDate);
     } else {
       setLocalDueDate('');
+      props.onDueDateChange('');
     }
   }, [localPaymentTerm]);
 
   // Actualiza los detalles de la compañía y el envío al cambiar el cliente
   useEffect(() => {
     if (localSelectedCustomer) {
-      const selected = props.customers.find((c) => c.id === localSelectedCustomer);
+      const selected = props.customers.find((c) => c.id === Number(localSelectedCustomer));
       if (selected) {
         setLocalCompanyDetails({
-          name: selected.companyName,
-          vat: selected.companyVat,
-          address: selected.companyAddress,
-          city: selected.companyCity,
+          name: selected.company_name,
+          vat: selected.company_vat,
+          address: selected.company_address,
+          city: selected.company_city,
         });
         setLocalShippingAddress({
-          name: selected.shippingName,
-          vat: selected.shippingVat,
-          address: selected.shippingAddress,
-          city: selected.shippingCity,
+          name: selected.shipping_name,
+          vat: selected.shipping_vat,
+          address: selected.shipping_address,
+          city: selected.shipping_city,
         });
       }
     } else {
@@ -135,11 +138,12 @@ const InvoiceDetails: React.FC<InvoiceDetailsProps> = (props) => {
     props.onPaymentTermChange(newPaymentTerm);
   };
 
+  /*
   const handleDueDateChange = (newDueDate: string) => {
     setLocalDueDate(newDueDate);
     props.onDueDateChange(newDueDate);
   };
-
+  */
 
   return (
     <div className="invoice-details-container">
@@ -235,12 +239,7 @@ const InvoiceDetails: React.FC<InvoiceDetailsProps> = (props) => {
               value={localDueDate}
               readOnly
             />
-            {/* Icono de calendario */}
-            <Calendar
-              className="calendar-icon"
-              size={20}
-              onClick={() => setIsEditingDueDate(!isEditingDueDate)}
-            />
+            
           </div>
         </div>
       </div>

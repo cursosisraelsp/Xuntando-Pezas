@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDatosContext } from "../../HOOKS/useDatosContext";
 import { DatosUser } from "../../TIPOS/INTERFACES.App";
 import "../../estilo/Acceso.App.css";
-import { Titulo } from "../../Componentes/Titulo";
+import { Titulo } from "../../componentes/Titulo";
 import { Imaxes } from "../../assets/Imaxes";
 
 const AccesoApp = () => {

@@ -1,9 +1,9 @@
 // App.tsx
 import React, { useState } from 'react';
-import InvoiceHeader from './componentes/InvoiceHeader';
-import InvoiceDetails from './componentes/InvoiceDetails';
-import InvoiceItemsTable from './componentes/InvoiceItemsTable';
-import FileUpload from './componentes/FileUpload';
+import InvoiceHeader from '../componentes/InvoiceHeader';
+import InvoiceDetails from '../componentes/InvoiceDetails';
+import InvoiceItemsTable from '../componentes/InvoiceItemsTable';
+import FileUpload from '../componentes/FileUpload';
 import './App.css';
 
 interface Customer {
