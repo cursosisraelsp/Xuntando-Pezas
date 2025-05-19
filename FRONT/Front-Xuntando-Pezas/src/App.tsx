@@ -3,6 +3,7 @@ import { Proveedorcontexto } from './0.CONTEXTO.App';
 import './App.css'
 import LogueoApp from './LogueoApp/Logueo.App';
 import RutasPublicasApp from './RUTAS/Rutas.Publicas.App';
+import RutasPrivadas from './RUTAS/Rutas.Privadas.App';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <Proveedorcontexto>
           <LogueoApp>
             <RutasPublicasApp />
+            <RutasPrivadas />
           </LogueoApp>
         </Proveedorcontexto>
       </BrowserRouter>
