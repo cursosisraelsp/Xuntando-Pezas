@@ -4,6 +4,6 @@ export interface DatosNewUser {
     email: string;
     profesion: string;
     rol: string;
-    imagen?:string | File | null; 
+    imagen?: File | null; 
   }
   

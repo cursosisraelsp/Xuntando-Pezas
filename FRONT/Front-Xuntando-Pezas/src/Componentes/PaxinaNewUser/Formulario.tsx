@@ -16,8 +16,6 @@ const Formulario = ({ onSubmit }: Props) => {
     rol: "",
     imagen: null,
 
-
-
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

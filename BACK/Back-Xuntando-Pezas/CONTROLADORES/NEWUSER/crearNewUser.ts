@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { execucionTodoBBDD } from "../../instruccions.base.sqlite";
 import path from "path";
 import fs from "fs";
 import { open } from "sqlite";
@@ -9,17 +8,22 @@ sqlite3.verbose();
 
 export const crearNewUser = async (req: Request, res: Response) => {
   const { nombre, apellidos, email, profesion, rol } = req.body;
+ console.log("🧪 req.headers['content-type']", req.headers['content-type']);
+console.log("🧪 req.body:", req.body);
+console.log("🧪 req.file:", req.file);
+
   const archivoImagen = req.file;
 
-const rutaFinalImagen = archivoImagen
-  ? `imagenes/${archivoImagen.filename}`
-  : null;
+let rutaFinalImagen = null;
 
 
   try {
+    console.log("📸 ARCHIVO IMAGEN:", archivoImagen);
+    console.log("📸 RUTA IMAGEN:", archivoImagen?.path);
     if (archivoImagen) {
-      const rutaDestino = path.join(__dirname, "../../public/imagenes", archivoImagen.filename);
-      fs.renameSync(archivoImagen.path, rutaDestino);
+      //const rutaDestino = path.join(__dirname, "../../public/imagenes", archivoImagen.originalname);
+      //fs.renameSync(archivoImagen.path, rutaDestino);
+      rutaFinalImagen = archivoImagen.originalname;
    }
     const db = await open({
       filename: "./basedatos.db",
@@ -40,7 +44,7 @@ console.log({ nombre, apellidos, email, profesion, rol, imagen: archivoImagen?.f
 
     res.status(201).json({
       mensaje: "Usuario creado correctamente",
-      imagen: rutaFinalImagen || null,
+      imagen: rutaFinalImagen,
     });
   } catch (error) {
     console.error("💥 Error al crear usuario:", error);

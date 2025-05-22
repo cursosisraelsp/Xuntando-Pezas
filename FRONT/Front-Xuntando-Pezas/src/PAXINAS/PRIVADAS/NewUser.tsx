@@ -1,4 +1,4 @@
-// src/paginas/NewUser.tsx
+
 import React, { useState } from "react";
 import "../../Componentes/PaxinaNewUser/index-newuser.css";
 import Formulario from "../../Componentes/PaxinaNewUser/Formulario";
@@ -17,18 +17,34 @@ import { DatosNewUser } from "../../TIPOS/INTERFACES.NewUser";
 
 export default function NewUser() {
   const [imagenPerfil, setImagenPerfil] = useState<string>(Imaxes.avatar);
-  const [datosFormulario, setDatosFormulario] = useState<DatosNewUser>({});
+  const [archivoImagen, setArchivoImagen] = useState<File | null>(null);
+  const [datosFormulario, setDatosFormulario] = useState<DatosNewUser>({
+    nombre: "",
+  apellidos: "",
+  email: "",
+  profesion: "",
+  rol: "",
+  imagen: null,
+  });
 
   const handleSubmit = async () => {
-    const datos = { ...datosFormulario, imagen: imagenPerfil };
+    
     try {
-      const res = await fetch("http://localhost:3000/usuarios", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(datos),
-      });
+      const formData = new FormData();
+      formData.append("nombre", datosFormulario.nombre); 
+      formData.append("apellidos", datosFormulario.apellidos);
+      formData.append("email", datosFormulario.email);
+      formData.append("profesion", datosFormulario.profesion);
+      formData.append("rol", datosFormulario.rol);
+      if (archivoImagen) {
+        formData.append("imagen", archivoImagen);
+      } 
+ const res = await fetch("http://localhost:3000/usuarios", {
+  method: "POST",
+  body: formData,
+});
+
+
       const json = await res.json();
       console.log("Usuario creado correctamente:", json);
     } catch (err) {
@@ -48,10 +64,13 @@ export default function NewUser() {
               if (file) {
                 const url = URL.createObjectURL(file);
                 setImagenPerfil(url);
+                setArchivoImagen(file);
               }
             }}
-            eliminarImagen={() => setImagenPerfil(Imaxes.avatar)}
-          />
+           eliminarImagen={() => {
+              setImagenPerfil(Imaxes.avatar);
+              setArchivoImagen(null);
+            }}/>
         </div>
         
 
