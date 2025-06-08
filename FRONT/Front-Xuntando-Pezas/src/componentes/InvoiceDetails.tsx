@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Edit } from "lucide-react";
-import '../componentes/InvoiceDetails.css';
+import '../Componentes/InvoiceDetails.css';
+
 
 interface InvoiceDetailsProps {
   customers: {
@@ -135,10 +136,10 @@ const InvoiceDetails: React.FC<InvoiceDetailsProps> = (props) => {
     props.onPaymentTermChange(newPaymentTerm);
   };
 
-  const handleDueDateChange = (newDueDate: string) => {
+  /*const handleDueDateChange = (newDueDate: string) => {
     setLocalDueDate(newDueDate);
     props.onDueDateChange(newDueDate);
-  };
+  };*/
 
 
   return (
