@@ -1,0 +1,1 @@
+-Dejar un archivo y sobretodo si es un package.json fuera de una carpeta puede ser causante de muchos lios de rutas ya que puede modificar la vista de una carpeta Front o Front/Front-Xuntando-Pezas
