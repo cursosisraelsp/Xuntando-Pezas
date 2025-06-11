@@ -6,6 +6,7 @@ import profile from "./Profile.png";
 import rectangle from "./Rectangle.png";
 import shape from "./Shape.png";
 
+
 export const Imaxes = {
   engranaxe,
   avatar,
@@ -14,4 +15,5 @@ export const Imaxes = {
   profile,
   rectangle,
   shape,
+
 };

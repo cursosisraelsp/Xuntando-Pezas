@@ -9,8 +9,7 @@ sqlite3.verbose();
 export const crearNewUser = async (req: Request, res: Response) => {
   const { nombre, apellidos, email, profesion, rol } = req.body;
  console.log("🧪 req.headers['content-type']", req.headers['content-type']);
-console.log("🧪 req.body:", req.body);
-console.log("🧪 req.file:", req.file);
+
 
   const archivoImagen = req.file;
 
@@ -18,8 +17,7 @@ let rutaFinalImagen = null;
 
 
   try {
-    console.log("📸 ARCHIVO IMAGEN:", archivoImagen);
-    console.log("📸 RUTA IMAGEN:", archivoImagen?.path);
+ 
     if (archivoImagen) {
       //const rutaDestino = path.join(__dirname, "../../public/imagenes", archivoImagen.originalname);
       //fs.renameSync(archivoImagen.path, rutaDestino);

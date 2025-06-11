@@ -34,12 +34,27 @@ const Formulario = forwardRef<FormularioRef, Props>(({ onChange }, ref) => {
 
   return (
     <div className="formulario-perfil">
-      <input type="text" name="nombre" placeholder="Nombre" value={formulario.nombre} onChange={handleChange} />
-      <input type="text" name="apellidos" placeholder="Apellidos" value={formulario.apellidos} onChange={handleChange} />
-      <input type="email" name="email" placeholder="Email" value={formulario.email} onChange={handleChange} />
-      <input type="text" name="profesion" placeholder="Profesión" value={formulario.profesion} onChange={handleChange} />
-      <input type="text" name="rol" placeholder="Rol" value={formulario.rol} onChange={handleChange} />
+      <div className="row">
+        <div className="input-nombre">
+          <label htmlFor="nombre">Nombre</label>
+      <input type="text" name="nombre" value={formulario.nombre} onChange={handleChange} />
+      </div>
+      <div className="input-apellidos">
+       <label htmlFor="apellidos">Apellidos</label>
+      <input type="text" name="apellidos"  value={formulario.apellidos} onChange={handleChange} />
+      </div>
+      </div>
+      <div className="input-linea">
+      <label htmlFor="email">Email</label>
+      <input type="email" name="email" value={formulario.email} onChange={handleChange} /></div>
+     <div className="input-linea">
+      <label htmlFor="profesion ">Profesión</label>
+      <input type="text" name="profesion" value={formulario.profesion} onChange={handleChange} /></div>
+     <div className="input-linea">
+      <label htmlFor="rol">Rol</label>
+      <input type="text" name="rol" value={formulario.rol} onChange={handleChange} /></div>
     </div>
+    
   );
 });
 

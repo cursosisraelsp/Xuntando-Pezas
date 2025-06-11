@@ -25,3 +25,14 @@
   cursor: pointer;
   padding: 10px;
 }
+
+.newuser-layout {
+  min-height: 100vh;
+  background: #f4f6ff;
+  position: relative;
+}
+
+.newuser-content {
+  margin-right: 100px; /* ancho de la barra lateral */
+  padding: 40px 0 0 0;
+}

@@ -66,19 +66,15 @@ export default function NewUserAdri() {
       setMensajeConfirmacion("¡Datos enviados correctamente!");
       resetearFormulario();
       
-      // Ocultar el mensaje después de 3 segundos
+     
       setTimeout(() => {
         setMensajeConfirmacion("");
-      }, 3000);
+      }, 4000);
 
     } catch (err) {
       console.error("Error al crear usuario:", err);
       setMensajeConfirmacion("Error al enviar los datos. Por favor, inténtalo de nuevo.");
-      
-      // Ocultar el mensaje de error después de 3 segundos
-      setTimeout(() => {
-        setMensajeConfirmacion("");
-      }, 3000);
+
     }
   };
 
