@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import AccesoApp from "../PAXINAS/PUBLICAS/Acceso.App";
-import Users from "../PAXINAS/PRIVADAS/Users.app"; // Adjusted path to match the correct file
+import Users from "../PAXINAS/PRIVADAS/UsersApp"; // Adjusted path to match the correct file
 
 const RutasPublicasApp: React.FC = () => {
   return (
