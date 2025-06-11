@@ -1,1 +1,0 @@
-export const dbPromise = /* your dbPromise implementation */;
