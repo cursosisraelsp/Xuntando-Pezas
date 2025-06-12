@@ -44,6 +44,16 @@ export default function NewUserAdri() {
   };
 
   const handleSubmit = async () => {
+     const validarEmail = (email: string): boolean => {
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regexEmail.test(email);
+  };
+
+  if (!validarEmail(datosFormulario.email)) {
+    setMensajeConfirmacion("Correo inválido. Por favor, revisa el formato.");
+    setTimeout(() => setMensajeConfirmacion(""), 4000);
+    return; 
+  }
     try {
       const formData = new FormData();
       formData.append("nombre", datosFormulario.nombre);
