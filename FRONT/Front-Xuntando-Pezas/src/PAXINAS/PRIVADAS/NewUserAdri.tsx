@@ -48,12 +48,28 @@ export default function NewUserAdri() {
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regexEmail.test(email);
   };
+    if (
+      !datosFormulario.nombre.trim() ||
+      !datosFormulario.apellidos.trim() ||
+      !datosFormulario.email.trim() ||
+      !datosFormulario.profesion.trim() ||
+      !datosFormulario.rol.trim()
+    ) {
+      setMensajeConfirmacion("Todos los campos deben estar completos.");
+      setTimeout(() => setMensajeConfirmacion(""), 4000);
+      return;
+    }
 
   if (!validarEmail(datosFormulario.email)) {
     setMensajeConfirmacion("Correo inválido. Por favor, revisa el formato.");
     setTimeout(() => setMensajeConfirmacion(""), 4000);
     return; 
-  }
+  } if (!archivoImagen) {
+  setMensajeConfirmacion("Debes seleccionar una imagen de perfil.");
+  setTimeout(() => setMensajeConfirmacion(""), 4000);
+  return;
+}
+
     try {
       const formData = new FormData();
       formData.append("nombre", datosFormulario.nombre);
@@ -92,11 +108,18 @@ export default function NewUserAdri() {
     <div className="newuser-container">
       <div className="formulario-container">
         <h2>Profile</h2>
-        {mensajeConfirmacion && (
-          <div className={`mensaje-confirmacion ${mensajeConfirmacion.includes("Error") ? "error" : "exito"}`}>
-            {mensajeConfirmacion}
-          </div>
-        )}
+       {mensajeConfirmacion && (
+  <div className={`mensaje-confirmacion ${
+  mensajeConfirmacion.toLowerCase().includes("error") ||
+  mensajeConfirmacion.toLowerCase().includes("correo") ||
+  mensajeConfirmacion.toLowerCase().includes("todos") ||
+  mensajeConfirmacion.toLowerCase().includes("imagen")
+    ? "error"
+    : "exito"
+}`}>
+    {mensajeConfirmacion}
+  </div>
+)}
         <div className="avatar-bloque">
           <div className="avatar-contenedor">
             <Avatar
