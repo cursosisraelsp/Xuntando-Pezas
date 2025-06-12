@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './NewCustomer.module.css';
-import illustration from '../../assets/customer-images/illustration.png';
+import illustration from '../../assets/customer-images/Illustration.png';
 import profileIcon from '../../assets/customer-images/profile.png';
 
 

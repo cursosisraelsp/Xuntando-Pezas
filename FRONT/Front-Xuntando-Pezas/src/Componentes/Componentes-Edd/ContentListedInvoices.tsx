@@ -30,14 +30,8 @@ export default function ContentListedInvoices() {
   }, []);
 
   const numRexistros = invoices.length;
-
-
-
-    return( 
-
-    
-    <div className="content-listed">
-        object here
+ return(     
+    <div className="content-listed">        
         <div className="bar-invoices-options">
             <ul>
                 <li className="activo">Invoices</li>
