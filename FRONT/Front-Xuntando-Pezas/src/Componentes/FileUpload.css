@@ -1,0 +1,44 @@
+/*@import url('@fontsource/mulish');*/
+
+.file-upload-container {
+    display: flex; /* Usamos flexbox para alinear los elementos en la misma línea */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 40px;
+    border: 2px dashed #ccc;
+    /*border-radius: 5px;*/
+    background-color: #FFFFFF;
+    color: #405169;
+    /*margin-top: 20px; Ajusta el margen según necesites */
+    font-family: mulish;
+    margin-top: 20px;
+  }
+  
+  .file-upload-container.dragging {
+    border-color: #007bff;
+    background-color: #e0f2ff;
+  }
+  
+  .file-upload-container p {
+    margin-right: 15px; /* Espacio entre el texto y el botón */
+    margin-bottom: 19px; /* Elimina el margen inferior del párrafo */
+    font-size: 1rem;
+  }
+  
+  .browse-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .browse-button:hover {
+    background-color: #0056b3;
+  }
+  
+  input[type="file"] {
+    display: none;
+  }

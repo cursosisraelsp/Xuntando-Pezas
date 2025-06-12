@@ -1,0 +1,31 @@
+div.btn-new-bar {
+  text-align: right;
+  display: block;
+  padding-bottom: 12px;
+}
+
+div .btn-header-right {
+  text-align: center;
+  color: cornsilk;
+  background: linear-gradient(to right, #3785dd 20%, #5160e7 100%);
+  padding: 3px 12px 3px 10px;
+  border: 1px transparent ridge;
+  font-size: 0.8em;
+  border-radius: 4px;
+  font-weight: lighter;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+}
+
+.btn-header-right:hover {
+  border: 1px #404040 solid;
+  transform: scale(1.02);
+  filter: invert(0.1);
+}
+
+.btn-header-right .symbol-btn-header-right {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2em;
+  vertical-align: -3px;
+  margin-right: 6px;
+}

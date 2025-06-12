@@ -8,10 +8,16 @@ interface LocalContextType {
 }
 interface DatosUser {
     username:string,
-    age:string
+    pwd:string
   }
+interface DatosWrapperHeader {
+    seccion:string,
+    titulo:string,
+    icono:string
+}
 export type {
     UserData,
     LocalContextType,
-    DatosUser
+    DatosUser,
+    DatosWrapperHeader
 }

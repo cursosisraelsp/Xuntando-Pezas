@@ -1,0 +1,105 @@
+############### PLANTEXAMENTOS INICIAIS #################
+#########################################################
+
+Obxetivo básico inicial: crear un miniCRM para visión PC
+	- Crear e eliminar productos, usuarios e clientes
+	
+API: nodejs con Typescript
+Cliente: Reactjs Typescript
+BBDD: SQLite
+
+Se dese tempo:
+ Pódese plantexar funcionalidades
+ Visión móbil
+
+#################################
+
+--> Plan global: crear página logueo que conectará con BBDD, tendrá un server.ts y una página de inicio.
+
+	--> 	Componentes comunes a todas las páginas: barra lateral (hasta arriba con iconos), 
+		barra superior (añadir título de la página a la izq y a la derecha círculo para foto perfil usuario),
+		el mismo color de fondo.
+
+	-->	Página de inicio sesión
+
+		- (Login) con campo usuario (símbolo persona) y campo contraseña (símbolo llave), botón Entrar.
+		- Da acceso a página inicio app (Home) con mensaje "Estou dentro" únicamente y un botón de Salir para el logout.
+		- Posteriormente, se incluirán los 6 cuadrados con las rutas a las páginas.
+
+########## FRONT ##########
+
+COMPOÑENTES INICIAIS
+
+	-- Formulario
+		- Botóns
+		- Users
+		- Customers
+		- Invoices
+	-- Logo User
+	-- Enlaces
+		- Con Imaxes [Menú Home]
+		- Con Iconos [Menú Lateral]
+		- Botón ( Add New )
+	-- Lista
+		- Users
+		- Customers
+		- Products
+		- Invoices
+
+	-- Titulo Páxina
+
+
+##################################
+Forma de proceder:
+
+	> Cada persoa ocuparase da sá páxina / componente asignado.
+
+#################################
+
+Martín   - Productos
+Vanessa  - Customers
+Fran	 - Users
+Edgar	 - Invoices
+Salvador - New Product
+Adrian	 - New User
+Manuel	 - New Invoice
+Ángel	 - New Customers
+Eu	 - Home
+	 - Login
+	 - Componentes : Enlaces
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

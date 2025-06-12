@@ -1,0 +1,11 @@
+
+.estilo-seccion-custormers{
+    background-color: #F5F5F5;
+    width: 100%;
+    flex: 1;
+}
+
+.estilo-icono-customers{
+    width: 20px;
+    cursor: pointer;
+}

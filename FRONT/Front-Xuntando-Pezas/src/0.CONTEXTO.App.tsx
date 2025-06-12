@@ -3,23 +3,33 @@ import { useNavigate } from 'react-router-dom';
 //### A miña
 //export const LocalContext = createContext<object>({}); // inicializo
 //
-import {UserData,LocalContextType} from './TIPOS/INTERFACES.App'
+import {LocalContextType} from './TIPOS/INTERFACES.App'
+import { Comunicacion } from './COMUNICACION.HTTP/Comunicacion.App';
+import { endpoints, urlServidorLocal } from './DATOS/datos';
 
 export const LocalContext = createContext<LocalContextType | null>(null);
 
 function Proveedorcontexto({ children }: { children: React.ReactNode }){
     const [isUserLogueado,setIsUserLogueado] = useState(false)
     let navigate = useNavigate();
-    const login=(dato:UserData)=>{
-        console.log("estou en Proveedorcontexto en login: ",dato.username)
-        if(dato.username == 'Israel'){
-            console.log('estou dentro de filtro: ',dato.username)
+
+
+    const login = async (dato:any)=>{
+        
+        let oToken = await Comunicacion.metodoPost(`${urlServidorLocal}/${endpoints.acceso}`,dato);
+        console.log("Comunicacion.isUser() ",Comunicacion.isUser(oToken))
+        if(Comunicacion.isUser(oToken)){
+            console.log("Entras?????")
             setIsUserLogueado(true)
             navigate('/app')
         }
     }
+
+
+
     const logout =()=>{
         console.log("estou en Proveedorcontexto en logout: ")
+        localStorage.removeItem("usuario");
         setIsUserLogueado(false)
         navigate('/')
         

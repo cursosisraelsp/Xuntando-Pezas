@@ -1,0 +1,139 @@
+/* CONTENEDOR PRINCIPAL */
+.newuser-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    height: 100vh;
+    padding: 60px 100px;
+    box-sizing: border-box;
+    background-color: #f4f6ff;
+    overflow: hidden;
+    flex: 1;
+  }
+  
+  /* FORMULARIO CAJA IZQUIERDA */
+  .formulario-container {
+    background-color: #fff;
+    padding: 40px;
+    width: 608px;
+    height: 644px;
+    box-shadow: 0px 11px 24px rgba(52, 113, 202, 0.31);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* TÍTULO PROFILE */
+  .formulario-container h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: #000;
+  }
+  
+  /* AVATAR Y BOTONES */
+  .avatar-y-botones {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .avatar-contenedor img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .avatar-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .boton-cambiar,
+  .boton-borrar {
+    width: 171px;
+    height: 45px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .boton-cambiar {
+    background-color: #1a1a40;
+    color: #fff;
+    border: none;
+  }
+  
+  .boton-borrar {
+    background-color: #ffffff;
+    color: #1a1a40;
+    border: 1px solid #aaa4cb;
+  }
+  
+  /* FORMULARIO INPUTS */
+  .formulario-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .formulario-perfil .row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    border: 1px solid #4cbdeb;
+    padding: 8px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: #fff;
+  }
+  
+  /* INPUTS ESPECÍFICOS */
+  input[name="nombre"] {
+    width: 97px;
+  }
+  
+  input[name="apellidos"] {
+    width: 343px;
+  }
+  
+  input[name="mail"],
+  input[name="profesion"],
+  input[name="rol"] {
+    width: 343px;
+  }
+  
+  /* CONTENEDOR IMAGEN + BOTÓN ENVIAR */
+  .imagen-engranaxe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 144px;
+  }
+  
+  .imagen-engranaxe-container img {
+    width: 400px;
+    height: 400px;
+  }
+  
+  /* BOTÓN ENVIAR */
+  .boton-enviar {
+    width: 260px;
+    height: 65px;
+    margin-top: 40px;
+    border-radius: 12px;
+    background-color: #448aff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  

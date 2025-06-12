@@ -1,0 +1,11 @@
+.estilo-seccion-invoices{
+    background-color:#F5F5F5;
+    width: 100%;
+}
+
+/* Main Content */
+ .main-content {
+  background-color: #faf9ff;
+  padding: 20px;
+  flex-grow: 1;
+}

@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { useDatosContext } from "../../HOOKS/useDatosContext";
 import { DatosUser } from "../../TIPOS/INTERFACES.App";
+import "../../estilo/Acceso.App.css";
+import { Titulo } from "../../Componentes/Titulo";
+import { Imaxes } from "../../assets/Imaxes";
+
 const AccesoApp = () => {
   const {login}  = useDatosContext();
   const [inputs, setInputs] = useState<DatosUser>({
     username:"",
-    age:""
+    pwd:""
   });
   
 const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,34 +18,44 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   setInputs(values => ({...values, [name]: value}))
 }
 
-const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
   event.preventDefault();
   console.log(inputs);
-  login(inputs)
+  await login(inputs)
 }
 
 
-return (<>
-<form onSubmit={handleSubmit}>
-    <label>Introduce o teu nome:
+return (<div className="estilo-acceso">
+  
+<form className="form-acceso" onSubmit={handleSubmit}>
+    <Titulo titulo="Login" estilo="estilo-titulo"/>
+    <label className="label-acceso">
+      <img className="imaxes-acceso" src={Imaxes.usuario} alt="usuario" />
+      
     <input 
+      className="input-acceso"
       type="text" 
       name="username" 
+      placeholder="Introduce o teu nome"
       value={inputs.username || ""} 
       onChange={handleChange}
     />
     </label>
-    <label>Introduce a túa idade:
+    <label className="label-acceso" >
+    <img className="imaxes-acceso" src={Imaxes.mensaxeSecreto}  alt="usuario" />
       <input 
-        type="number" 
-        name="age" 
-        value={inputs.age || ""} 
+        className="input-acceso"
+        type="password" 
+        name="pwd" 
+        placeholder="Introduce o teu password"
+        value={inputs.pwd || ""} 
         onChange={handleChange}
       />
       </label>
-      <input type="submit" />
+      <label>{/* <input className="input-acceso" type="submit" /> */}<button type="submit" className="input-acceso">Enviar</button></label>
+      
   </form>
-</>
+</div>
   
 )
   };

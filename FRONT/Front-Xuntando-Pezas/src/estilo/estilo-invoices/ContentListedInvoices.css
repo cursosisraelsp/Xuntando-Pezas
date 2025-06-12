@@ -1,0 +1,146 @@
+.content-listed {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 8px;
+  border-bottom: 2px solid #dfe0eca1;
+  margin-top: 12px;
+}
+
+.bar-invoices-options {
+  margin: 0px 6px;
+  margin-top: -38px;
+  
+}
+
+.bar-invoices-options ul {
+  display: flex; 
+  justify-content: flex-start;  
+  padding: 0px;
+  border-bottom: 2px #d6ddeb solid;
+}
+
+.bar-invoices-options ul li {
+  list-style: none;     
+  padding: 2px 0px 5px; 
+  margin-bottom: -2px;  
+  font-family: Arial, sans-serif;
+  font-size: 0.82em;  
+  color: #686868  
+}
+
+.bar-invoices-options ul li.activo {
+  font-weight: 700;
+  color: #363636;
+  border-bottom: 2.5px #3785dd solid;
+}
+
+.bar-invoices-options ul li.inactivo {
+ cursor: cell;
+}
+
+
+.bar-btn-invoices {
+  margin: 4px 6px 25px 6px;
+}
+
+.bar-btn-invoices button {
+  text-align: center;
+  color: cornsilk;
+  background: linear-gradient(to right, #277ee2 45%, #466fdf 140%);
+  padding: 2px 2px 2px 2px;
+  margin-top: 12px;
+  width: 120px;
+  border: 1px transparent ridge;
+  font-size: 0.8em;
+  border-radius: 4px;
+  font-weight: lighter;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.invoice-table {
+  margin: 15px 15px 15px 2px;
+  display: flex;
+  flex-direction: column;
+  color: #363636;
+}
+
+.invoice-table-header {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.invoice-table-header,
+.invoice-table-row {
+  display: grid;
+  grid-template-columns: 0.3fr 2fr 2fr 3.5fr 2.5fr 2fr 1fr;
+  padding: 5px;
+  text-align: left;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 0.7em;
+}
+
+.invoice-table-row {
+  cursor: default;
+}
+
+.invoice-table-row:hover {
+  background-color: #dfebfcd0;
+}
+
+.invoice-table-row div input {
+  height: 10px;
+  vertical-align: -1px;
+}
+
+/* .col-input {
+} */
+
+.col1-date,
+.col5-duedate {
+  letter-spacing: -0.5px;
+}
+
+.col3-customer {
+  color: #4a91e2d5;
+  font-weight: 600;
+}
+
+.col6-state {
+  padding-left: 0px;
+}
+
+.col6-state span {
+  border-radius: 15px;
+  padding: 1px 9px 1px 9px;
+  color: cornsilk;
+  background-color: #4a90e2;
+}
+
+.badge.invoiced {
+  background-color: #4a90e2;
+}
+
+.badge.paid {
+  background-color: #00c48c;
+}
+
+.badge.overdue {
+  background-color: #ff647c;
+}
+
+.footer-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-list .count-db-rows {
+  font-size: 10px;
+  color: #acacac;
+  padding-bottom: 14px;
+}
+
+/* .footer-list .numberpages {
+} */
