@@ -1,4 +1,25 @@
-/dist
-/node_modules
-*.sqlite
+# Node modules
+node_modules/
+
+# Carpeta de salida de compilación
+dist/
+
+# Archivos de configuración sensibles
 .env
+.env.local
+.envExample
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Bases de datos locales
+*.db
+*.sqlite
+*.sqlite3
+
