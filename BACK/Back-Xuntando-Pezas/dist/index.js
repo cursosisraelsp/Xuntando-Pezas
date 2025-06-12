@@ -1,14 +1,17 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const app = (0, express_1.default)();
-const port = 3000;
-app.get('/', (_req, res) => {
-    res.send('Servidor funcionando');
-});
-app.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import usuariosRouter from './Rutas/usuariosRouter.js';
+import loginRouter from './Rutas/loginRouter.js';
+import registroRouter from './Rutas/registroRouter.js';
+const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.json());
+app.use(express.static(path.resolve(__dirname, '../public')));
+app.use('/api/registro', registroRouter);
+app.use('/api/login', loginRouter);
+app.use('/api/usuarios', usuariosRouter);
+app.listen(3000, () => {
+    console.log('Servidor escuchando en puerto 3000');
 });

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+</head> <header>
+  <nav> <button><a href="http://localhost:3000/">Home</a></button>
+   <button><a href="http://localhost:3000/registro.html">Registro</a></button>
+  <button><a href="http://localhost:3000/usuarios.html">Tabla Usuarios Registrados</a></button>
+</nav></header>
+<body>
+  <h1>Iniciar sesión</h1>
+
+    <form id="loginForm">
+    <input type="text" name="usuario" placeholder="Usuario" required />
+    <input type="password" name="password" placeholder="Contraseña" required />
+    <button type="submit">Entrar</button>
+  </form>
+ <script>
+document.getElementById('loginForm').onsubmit = async function(e) {
+  e.preventDefault();
+  const usuario = e.target.usuario.value;
+  const password = e.target.password.value;
+  try {
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ usuario, password })
+    });
+    const data = await res.json();
+    alert(data.message);
+  } catch (err) {
+    alert('Error de conexión o del servidor');
+    console.error(err);
+  }
+};
+</script>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d5292;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+  </style>
+</body>
+</html>
